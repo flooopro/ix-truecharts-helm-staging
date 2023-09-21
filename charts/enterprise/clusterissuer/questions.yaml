@@ -62,6 +62,8 @@ questions:
                             description: BuyPass-Production
                           - value: 'https://api.test4.buypass.no/acme-v02/directory'
                             description: BuyPass-Staging
+                          - value: 'https://acme.zerossl.com/v2/DV90'
+                            description: ZeroSSL
                           - value: custom
                             description: Custom
                     - variable: customServer
@@ -78,6 +80,22 @@ questions:
                         type: string
                         required: true
                         default: "something@example.com"
+                    - variable: eabKeyId
+                      label: EAB KeyID
+                      description: "External Account Binding KeyID"
+                      schema:
+                        type: string
+                        show_if: [["server", "=", "ZeroSSL"]]
+                        required: true
+                        default: ""
+                    - variable: eabKey
+                      label: EAB Key (Secret)
+                      description: "External Account Binding Key"
+                      schema:
+                        type: string
+                        show_if: [["server", "=", "ZeroSSL"]]
+                        required: true
+                        default: ""
                     - variable: cfapikey
                       label: CloudFlare API key
                       description: "CloudFlare API Key"

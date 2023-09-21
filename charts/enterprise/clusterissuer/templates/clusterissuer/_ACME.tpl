@@ -21,6 +21,14 @@ spec:
     server: {{ if eq .server "custom" }}{{ .customServer }}{{ else }}{{ .server }}{{ end }}
     privateKeySecretRef:
       name: {{ .name }}-acme-clusterissuer-account-key
+    {{- if .eabKeyId }}
+    externalAccountBinding:
+      keyID: {{ .eabKeyId }}
+      keyRef:
+        name: {{ $issuerSecretName }}
+        key: eab-key
+      keyAlgorithm: HMAC-SHA256
+    {{- else }}
     solvers:
     {{- if eq .type "HTTP01" }}
     - http01:
@@ -86,6 +94,7 @@ metadata:
   name: {{ $issuerSecretName }}
 type: Opaque
 stringData:
+  eab-key: {{ .eabKey | default "" }}
   cf-api-token: {{ .cfapitoken | default "" }}
   cf-api-key: {{ .cfapikey | default "" }}
   route53-secret-access-key: {{ .route53SecretAccessKey | default "" }}
