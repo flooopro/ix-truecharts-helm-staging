@@ -5,21 +5,21 @@ description: Certificate management for Kubernetes
 home: https://truecharts.org/charts/enterprise/clusterissuer
 icon: https://truecharts.org/img/hotlink-ok/chart-icons/clusterissuer.png
 keywords:
-  - cert-manager
-  - certificates
+- cert-manager
+- certificates
 dependencies:
-  - name: common
-    repository: https://library-charts.truecharts.org
-    version: 14.0.1
+- name: common
+  repository: https://library-charts.truecharts.org
+  version: 14.0.1
 kubeVersion: ">=1.16.0-0"
 maintainers:
-  - email: info@truecharts.org
-    name: TrueCharts
-    url: https://truecharts.org
+- email: info@truecharts.org
+  name: TrueCharts
+  url: https://truecharts.org
 name: clusterissuer
 sources:
-  - https://github.com/truecharts/charts/tree/master/charts/enterprise/clusterissuer
-  - https://cert-manager.io/
+- https://github.com/truecharts/charts/tree/master/charts/enterprise/clusterissuer
+- https://cert-manager.io/
 type: application
 version: 4.0.2
 annotations:
