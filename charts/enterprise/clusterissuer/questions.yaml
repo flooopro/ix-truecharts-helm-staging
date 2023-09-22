@@ -75,7 +75,7 @@ questions:
                 default: 'https://acme-staging-v02.api.letsencrypt.org/directory'
             - variable: email
               label: Email
-              description: "Email adress to use for certificate issuing must match your DNS provider email when required"
+              description: "Email address to use for certificate issuing must match your DNS provider email when required"
               schema:
                 type: string
                 required: true
@@ -85,7 +85,7 @@ questions:
               description: "External Account Binding KeyID"
               schema:
                 type: string
-                show_if: [["server", "=", "ZeroSSL"]]
+                show_if: [["server", "=", "https://acme.zerossl.com/v2/DV90"]]
                 required: true
                 default: ""
             - variable: eabKey
@@ -93,7 +93,7 @@ questions:
               description: "Secret External Account Binding Key"
               schema:
                 type: string
-                show_if: [["server", "=", "ZeroSSL"]]
+                show_if: [["server", "=", "https://acme.zerossl.com/v2/DV90"]]
                 required: true
                 default: ""
             - variable: cfapikey
